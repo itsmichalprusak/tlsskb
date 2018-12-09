@@ -1,0 +1,29 @@
+<div class="d-flex w-100 h-100 mt-3 justify-content-center align-self-center">
+  <div class="card" style="width: 60%;">
+    <div class="card-body">
+      <h5 class="card-title">Na skróty</h5>
+      <h6 class="card-subtitle mb-4 text-muted">Wszystkie narzędzia, z których będziesz najczęściej korzystać. Pod
+        ręką.</h6>
+      <h6>Eksporty</h6>
+      <ul class="list-unstyled">
+        <li><a href="/admin/exportShopList"><i class="fas fa-arrow-right"></i> Eksportuj listę sklepów</a></li>
+        <li><a href="/admin/exportQuestList"><i class="fas fa-arrow-right"></i> Eksportuj listę zadań</a></li>
+      </ul>
+      <h6>Użytkownicy</h6>
+      <ul class="list-unstyled">
+        <li><a href="/admin/browseUsers"><i class="fas fa-arrow-right"></i> Przeglądaj katalog użytkowników</a></li>
+        <li><a href="/admin/addUser"><i class="fas fa-arrow-right"></i> Utwórz nowe konto</a></li>
+      </ul>
+      <% if (me.group === 'dev') { %>
+      <h6>Administratorzy</h6>
+      <ul class="list-unstyled">
+        <li><a href="/admin/browseAdmins"><i class="fas fa-arrow-right"></i> Przeglądaj katalog administratorów</a></li>
+        <li><a href="/admin/addAdmin"><i class="fas fa-arrow-right"></i> Dodaj administratora</a></li>
+      </ul>
+      <% } %>
+    </div>
+    <div class="card-footer bg-primary text-center text-muted">
+      Copyright &copy; 2018 Meehoweq
+    </div>
+  </div>
+</div>

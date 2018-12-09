@@ -1,0 +1,41 @@
+<div class="d-flex w-100 h-100 mt-5 justify-content-center align-self-center">
+  <div class="card<%= validationError === null ? '' : ' border-danger' %>" style="width: 28rem;">
+    <div class="card-body">
+      <h5 class="card-title">Rejestracja</h5>
+      <h6
+        class="card-subtitle mb-4 <%= validationError === null ? 'text-muted' : 'text-danger' %>">
+        <%= validationError === null ? 'Utwórz nowe konto i rozpocznij przygodę' : validationError %></h6>
+      <form method="post" action="/register">
+        <div class="form-group">
+          <label for="username">Nazwa użytkownika</label>
+          <input type="text" class="form-control form-control-sm" id="username" name="username"
+                 placeholder="Jak chcesz się nazywać?" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Adres email</label>
+          <input type="text" class="form-control form-control-sm" id="username" name="username"
+                 placeholder="Adres email, którego będziemy używać do komunikacji z Tobą." required>
+          <small id="emailHelp" class="form-text text-muted">Nigdy nie podamy nikomu Twojego adresu email, ani nie
+            przyśłemy spamu. Jesteś bezpieczny!
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="password">Hasło</label>
+          <input type="password" class="form-control form-control-sm" id="password" name="password"
+                 placeholder="Wybierz mocne hasło, którego nikt nie odgadnie." required>
+        </div>
+        <div class="form-group">
+          <label for="passwordConfirmation">Powtórz hasło</label>
+          <input type="password" class="form-control form-control-sm" id="passwordConfirmation"
+                 name="passwordConfirmation" placeholder="Wpisz swoje hasło jeszcze raz, tak dla upewnienia." required>
+        </div>
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="tosConsent" name="tosConsent">
+          <label class="form-check-label" for="tosConsent">Przeczytałem i zgadzam się z Warunkami Świadczenia
+            Usługi.</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Utwórz konto</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+  <title>Narzędzia SkyBlock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta charset="utf-8">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- STYLES END -->
+</head>
+<body>
+<div class="d-flex w-100 h-100 mt-5 mb-4 justify-content-center align-self-center">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="width: 60%;">
+    <a class="navbar-brand" href="/">Narzędzia SkyBlock</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/"><i class="fas fa-home"></i> Strona główna</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shops"><i class="fas fa-shopping-cart"></i> Sklepy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/quests"><i class="fas fa-clipboard-list"></i> Zadania</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user<%= (me.group === 'admin' || me.group === 'dev') ? '-shield' : '' %>"></i> <%= me.name %>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/changePassword">Zmień hasło</a>
+            <a class="dropdown-item" href="/logout">Wyloguj się</a>
+            <% if (me.group === 'admin' || me.group === 'dev') { %>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item text-danger" href="/admin"><i class="fas fa-lock"></i> Panel administratora</a>
+            <% } %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<% if (globalWarning !== null) { %>
+<div class="d-flex w-100 h-100 mb-4 justify-content-center align-self-center">
+  <div class="alert alert-dismissible alert-warning" style="width: 60%;">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Ostrzeżenie</strong>
+    <br>
+    <p class="mb-0"><%= globalWarning %></p>
+  </div>
+</div>
+<% } %>
+<%- body %>
+
+<!-- SCRIPTS -->
+<script src="/dependencies/sails.io.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<!-- SCRIPTS END -->
+</body>
+</html>

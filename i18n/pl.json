@@ -1,0 +1,7 @@
+{
+	"auth.noSuchUser": "Nie ma konta o takiej nazwie.",
+	"auth.incorrectPassword": "Nieprawidłowe hasło.",
+	"admin.invalidPassword": "Hasła nie zgadzają się.",
+	"dev.accessDenied": "Odmowa dostępu: nie masz praw do narzędzi deweloperskich. Ten incydent został zapisany.",
+	"admin.accessDenied": "Odmowa dostępu: nie masz praw do narzędzi administratorskich. Ten incydent został zapisany."
+}
